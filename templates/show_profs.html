@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="static/addstyle.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
+
+    {% if msgx %}
+    <script type="text/javascript">
+        alert("{{ msgx }}")
+
+    </script>
+    {% endif %}
+    <!-- <div class="container-fluid"> -->
+        
+
+<div class = "container-fluid">
+
+    
+    <div class="row">
+        <div class="col-md-6" style="background-color: white; color: black; margin-bottom: 0%; padding-bottom: 2%; padding-top: 2%; padding-left: 1%; float:left">
+                    
+            <h1 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serifs; text-align:left; font-size: 3vmax"><u><b>IIITU-SFIP</b></u></h1>
+        </div>
+        <div class="col-md-6" style="float: right; vertical-align: middle">
+
+            <div class="d-inline"><a href="http://iiitu.ac.in"><img src="static/iiitlogo.jpg" style="max-height: 8vmax; max-width: 8vmax; padding-right: 1%;padding-bottom: 2%; padding-top: 2%; float:right"></a></div>
+            <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline" style="margin-right: 2%"><a href="https://www.facebook.com/iiituna/" class="fa fa-facebook"></a></div>
+            <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline"><a href="https://twitter.com/iiituna" class="fa fa-twitter"></a></div>
+            <div class="d-sm-inline d-md-inline d-lg-inline d-xl-inline"><a href="https://www.linkedin.com/school/iiituna/" class="fa fa-linkedin"></a></div>
+
+        </div>
+    </div>
+
+
+    <div class="row" style="background-image: radial-gradient(rgb(185, 184, 184) 5%, gray 15%, black 60%);min-height: 50vh">
+        <div class="col-md-12">
+                <div class="row" style="min-height: 10vh">
+                        <div class="col-md-12" style="text-align: center; color: white; font-family: Georgia, 'Times New Roman', Times, serif; padding: 2%">
+                            <h3 style=" font-size: 2vmax"><u><b>Teacher Feedback Form</b></u></h3>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8" style="color: white">
+                            <!-- <form method="POST"> -->
+                                <!-- Name of Lecturer: <input type="text" name="lecturer" style="display: inline;">
+                                <p style="float: right">Subject: <input type="text" name="subject" style="display: inline"></p><br><br>
+                                 -->
+                                 <center><h5>Fill the Response:</h5></center>
+                                <table class="table table-borderless tablemobile" style="background-color: white; color: black;">
+                                    <thead>
+                                        <tr>
+                                            <th><b>Lecturer:</b></th>
+                                            <th><b>Subject taught</b></th>
+                                            <th><b>Give Feedback</b></th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for key, value in lisp.items() %}
+                                        <tr>
+                                            <td>{{ key }}</td>
+                                            <td>{{ value }}</td>
+                                            <td><a href="/stform?teacher={{key}}&subject={{value}}" id="{{key}}{{value}}">Fill Response</a></td>
+
+                                        </tr>
+                                        {% endfor %}
+
+                                    </tbody>
+                                </table>
+
+                                <center><h5>Response Filled:</h5></center>
+                                <table class="table table-borderless tablemobile" style="background-color: white; color: black;">
+                                        <thead>
+                                            <tr>
+                                                <th><b>Lecturer:</b></th>
+                                                <th><b>Subject taught</b></th>
+                                                <th><b>Give Feedback</b></th>
+                                                <!-- <th><b>Neither agree nor disagree</b></th>
+                                                <th><b>Agree</b></th>
+                                                <th><b>Strongly agree</b></th> -->
+                                            </tr>
+                                        </thead>
+                                        
+                                        <tbody>
+    
+                                            {% for key, value in exist.items() %}
+                                            <tr>
+                                                <td>{{ key }}</td>
+                                                <td>{{ value }}</td>
+                                                <td><form action="/response" method="POST"><input type="hidden" id="restech" name="restech" value="{{key}}"><input type="hidden" id="ressub" name="ressub" value="{{value}}"><input type="submit" value="View Response"></form></td>
+    
+                                            </tr>
+                                            {% endfor %}
+    
+                                        </tbody>
+                                    </table>
+                                <center><a href="logout" class="btn btn-default" style="background-color: white; color: black; margin-bottom: 2%">LOGOUT</a></center>
+                            <!-- </form> -->
+                        </div>
+                        <div class="col-md-2"></div>
+        
+                    </div>
+        
+                </div>
+        
+        </div>
+
+        
+    </div>
+    
+</div>
+    <script language="JavaScript">
+        window.history.forward();
+        function noBack()
+        {
+            window.history.forward();
+        }
+    </script>    
+</body>
+</html>
