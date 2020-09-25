@@ -9,4 +9,4 @@ Firstly build the database by typing command python3 create_database.py</br>
 Run the command python3 main.py and run website on localhost</br>
 
 # Sample output for the program
-![showing files](images/Screenshot\ (88).png)
+![showing files](images/"Screenshot (88).png")
