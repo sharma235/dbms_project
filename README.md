@@ -14,3 +14,5 @@ Run the command python3 main.py and run website on localhost</br>
 ![showing files](images/Screenshot%20(91).png)
 ![showing files](images/Screenshot%20(92).png)
 ![showing files](images/Screenshot%20(93).png)
+![showing files](images/Screenshot%20(97).png)
+![showing files](images/Screenshot%20(98).png)
