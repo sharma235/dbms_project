@@ -10,3 +10,7 @@ Run the command python3 main.py and run website on localhost</br>
 
 # Sample output for the program
 ![showing files](images/Screenshot%20(88).png)
+![showing files](images/Screenshot%20(89).png)
+![showing files](images/Screenshot%20(91).png)
+![showing files](images/Screenshot%20(92).png)
+![showing files](images/Screenshot%20(93).png)
